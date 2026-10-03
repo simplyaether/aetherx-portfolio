@@ -1,6 +1,6 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
-const revealTargets = document.querySelectorAll(".card, .tl-item, .contact-card");
+const revealTargets = document.querySelectorAll(".card, .acard, .about-box, .contact-card");
 
 if ("IntersectionObserver" in window) {
   const io = new IntersectionObserver((entries) => {
@@ -25,3 +25,16 @@ const nav = document.querySelector(".nav");
 window.addEventListener("scroll", () => {
   nav.style.boxShadow = window.scrollY > 8 ? "0 10px 30px -20px #000" : "none";
 }, { passive: true });
+
+document.querySelectorAll("[data-copy]").forEach((btn) => {
+  btn.addEventListener("click", async () => {
+    const original = btn.textContent;
+    try {
+      await navigator.clipboard.writeText(btn.dataset.copy);
+      btn.textContent = "Copied!";
+    } catch {
+      btn.textContent = btn.dataset.copy;
+    }
+    setTimeout(() => { btn.textContent = original; }, 1600);
+  });
+});

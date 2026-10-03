@@ -134,6 +134,55 @@ main{max-width:var(--max);margin:0 auto;padding:0 clamp(16px,5vw,48px)}
 .tl-head span{font-size:13px;color:var(--accent);font-weight:600}
 .tl-content p{font-size:14.5px;color:var(--muted)}
 
+.about-box{
+  background:linear-gradient(180deg,var(--panel-2),var(--panel));
+  border:1px solid var(--line);border-radius:calc(var(--radius) + 4px);
+  padding:clamp(20px,4vw,34px);margin-bottom:20px;
+}
+.about-line{font-size:clamp(15px,2vw,17.5px);margin-bottom:16px}
+.about-line b{color:var(--accent)}
+.about-list{list-style:none;display:grid;gap:10px}
+.about-list li{position:relative;padding-left:22px;color:var(--muted);font-size:15px}
+.about-list li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+
+.about-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.acard{
+  background:linear-gradient(180deg,var(--panel-2),var(--panel));
+  border:1px solid var(--line);border-radius:var(--radius);padding:18px;
+  transition:border-color .22s,transform .22s;
+}
+.acard:hover{border-color:rgba(77,166,255,.45);transform:translateY(-3px)}
+.acard-head{display:flex;align-items:center;gap:14px;position:relative;padding-right:64px}
+.avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;border:1px solid var(--line);background:var(--panel-2)}
+.server-logo{
+  width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#4da6ff,#1b4f9e);color:#04101f;
+  font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:24px;
+}
+.acard-id{display:grid;gap:3px;min-width:0}
+.acard-id b{font-size:16px;display:flex;align-items:center;gap:8px}
+.badge{font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(77,166,255,.4);padding:2px 7px;border-radius:6px}
+.handle{font-size:13.5px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.online{width:8px;height:8px;border-radius:50%;background:#37d67a;display:inline-block}
+.acard-brand{position:absolute;right:0;top:2px;display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--muted)}
+.acard-actions{display:flex;gap:10px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.pill{
+  font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;
+  padding:8px 16px;border-radius:999px;border:1px solid var(--line);
+  background:rgba(255,255,255,.03);color:var(--text);transition:.18s;
+}
+.pill:hover{border-color:var(--accent);color:var(--accent)}
+.pill-green{background:#2fbf63;border-color:#2fbf63;color:#04160b}
+.pill-green:hover{background:#3ad473;border-color:#3ad473;color:#04160b}
+
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.chip{
+  font-size:13.5px;padding:7px 16px;border-radius:999px;
+  background:rgba(255,255,255,.03);border:1px solid var(--line);color:var(--muted);
+  transition:.18s;
+}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+
 .contact-card{
   background:linear-gradient(180deg,var(--panel-2),var(--panel));
   border:1px solid var(--line);border-radius:calc(var(--radius) + 6px);
